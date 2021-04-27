@@ -1,0 +1,18 @@
+{% include "../layout/top.html" %}
+
+<div class="board_view">
+    
+    <a href="/board/delete?num={{idx}}">삭제하기</a><br>
+
+    <div> 글번호: {{idx}} </div><br>
+    <div>id: {{id}}</div><br>
+    <div>제목: {{subject}} </div><br>
+    <div>내용: {{content}} </div><br>
+    <div>조회수: {{hit}}</div> <br>
+
+    <a href="/board">리스트로</a> <a href="/board/modify?num={{idx}}">수정</a> <br>
+    
+
+</div>
+
+{% include "../layout/bottom.html" %}

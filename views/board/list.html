@@ -1,0 +1,39 @@
+
+
+{% include "../layout/top.html" %}
+
+<div class="board_list">
+
+    <table>
+        <thead>
+            <th>번호</th>
+            <th>작성자</th>
+            <th>제목</th>
+            <th>작성시간</th>
+            <th>조회수</th>
+
+        </thead>
+        <tbody>
+            {% for item in boardTable %}
+            <tr>
+                <td>
+                    <form method="get" action="/board/view?num=">
+                        <input class="idx" type="submit" name="num" value="{{item.idx}}">
+                    </form>
+                </td>
+                <td>{{item.id}}</td>
+                <td>
+                    <a href="/board/view?num={{item.idx}}">{{item.subject}}</a>
+                </td>
+                <td>{{item.date}}</td>
+                <td>{{item.hit}}</td>
+            </tr>
+            {% endfor %}
+            <br><a href="/board/write">글쓰기</a>
+
+        </tbody>
+    </table>
+
+</div>
+
+{% include "../layout/bottom.html" %}

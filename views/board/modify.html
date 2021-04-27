@@ -1,0 +1,16 @@
+{% include "../layout/top.html" %}
+
+<div class="board_modify">
+    <form action="/board/modify" method="post">
+        글번호: <input class="idx" type="text" name="idx" readonly value="{{idx}}"><br>
+        작성자: {{id}}<br>
+        제목:<input type="text" name="subject" value="{{subject}}"><br>
+        내용:<input type="text" name="content" value="{{content}}"><br>
+        작성일: {{date}} <br>
+        <a href="/board/view?num={{idx}}">취소</a>  <input type="submit" value="수정완료"><br>
+    </form>
+    
+
+</div>
+
+{% include "../layout/bottom.html" %}

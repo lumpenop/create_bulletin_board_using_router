@@ -1,0 +1,15 @@
+{% include "../layout/top.html" %}
+
+<div class="board_write">
+
+    <form action="/board/write" method="post">
+        작성자: <input type="text" name="id"><br>
+        제목:<input type="text" name="subject"><br>
+        내용:<input type="text" name="content"><br>
+        작성일: {{date}} <br>
+        <a href="/board">취소</a> <input type="submit" value="작성완료"><br>
+    </form>
+
+</div>
+
+{% include "../layout/bottom.html" %}
