@@ -14,7 +14,7 @@ CREATE TABLE board(
     subject varchar(50) not null,
     content text,
     date datetime default now(),
-    hit int,
+    hit int default 0,
     constraint board_id
     foreign key (id)
     references user(user_id)

@@ -32,21 +32,15 @@ router.get('/', (req, res)=>{
 })
 
 router.get('/write', (req, res)=>{
-    let today = new Date();
-    let year = today.getFullYear(); // 년도
-    let month = today.getMonth() + 1;  // 월
-    let date = today.getDate();  // 날짜
-    let day = today.getDay();  // 요일
-    let hour = today.getHours(); // 시
-    let min = today.getMinutes();  // 분
-    let sec = today.getSeconds();  // 초
+   
     res.render('board/write.html',{
         
-        date: `${year}-${month}-${date} ${hour}:${min}:${sec}`,
+        
     })
 })
 
 router.post('/write', (req, res)=>{
+    
     connection.query(`insert into board(id, subject, content) \
     values('${req.body.id}', '${req.body.subject}', '${req.body.content}')`,
     (error, results)=>{
